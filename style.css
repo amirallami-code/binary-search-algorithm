@@ -1,0 +1,72 @@
+*,
+*:before,
+*:after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #61d954, #2ebf75);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: white;
+}
+
+.div {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 15px;
+  gap: 50px;
+}
+
+.header-h2 {
+  font-size: 25px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.header-text {
+  font-size: 20px;
+}
+
+.guesses {
+  text-align: center;
+  font-weight: 400;
+  font-size: 23px;
+}
+
+.text-guess2 {
+  transition: all 150ms;
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+}
+
+.btns {
+  cursor: pointer;
+  width: 250px;
+  height: auto;
+  padding: 15px 25px;
+  background-color: rgb(0, 108, 0);
+  color: white;
+  font-weight: 500;
+  border: none;
+  transition: all 150ms;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  -webkit-transition: all 150ms;
+  -moz-transition: all 150ms;
+  -ms-transition: all 150ms;
+  -o-transition: all 150ms;
+}
+
+.btns:hover {
+  background-color: rgb(0, 72, 0);
+}
