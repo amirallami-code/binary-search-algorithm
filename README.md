@@ -1,4 +1,4 @@
-# الگوریتم جستجو دودویی
-### این الگوریتم به ما چه کمکی میکنه؟
-کمک میکنه تا بتونیم در سریع ترین حالت ممکن به عدد یا حروف ، کلمه یا هر چیز دیگری دست پیدا کنیم. <br/>
-این کد برای پیدا کردن اعداد در نظر گرفته شده و بدون گرفتن عددی از کاربر میتونه اون رو به سریع ترین شکل پیدا کنه
+# Binary Search Algorithm
+### How does this algorithm help us?
+It helps us to find numbers or letters, words or anything else as quickly as possible. <br/>
+This code is intended for finding numbers and can find it in the fastest way without taking a number from user
