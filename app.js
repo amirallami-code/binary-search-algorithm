@@ -1,14 +1,14 @@
 let allNumbers = [
-    1,
-    2,
-    3,
-    4,
-    5,
-    6,
-    7,
-    8,
-    9,
-    10,
+    1
+    , 2
+    , 3
+    , 4
+    , 5
+    , 6
+    , 7
+    , 8
+    , 9
+    , 10,
     11,
     12,
     13,
@@ -1052,19 +1052,19 @@ function stepThree(event) {
     if (event.target.innerHTML === "Lower") {
 
         high = mid
-        mid = Math.ceil(mid - ((high - low) / 2))
+        mid = mid - ((high - low) / 2)
 
     } else if (event.target.innerHTML === "Higher") {
 
         low = mid
-        mid = Math.ceil(mid + ((high - low) / 2))
+        mid = mid + ((high - low) / 2)
 
     }
 
-    guessTextElem.innerHTML = "is this your number? " + Math.ceil(mid)
+    guessTextElem.innerHTML = "is this your number? " + Math.floor(mid)
 
     if (event.target.innerHTML === "Yes") {
-        guessTextElem.innerHTML = "i beat you with just " + guessCounter + " guesses ;)"
+        guessTextElem.innerHTML = "i beat you with just " + guessCounter + " questions ;)"
 
         yesBtn.style.display = 'none'
         lowerBtn.style.display = 'none'
@@ -1078,7 +1078,7 @@ function stepTwo(event) {
 
     if (event.target.innerHTML === "Yes") {
 
-        guessTextElem.innerHTML = "i found your number with one guess ;)"
+        guessTextElem.innerHTML = "i found your number with one question ;)"
 
         yesBtn.style.display = 'none'
         noBtn.style.display = 'none'
