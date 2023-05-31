@@ -1028,7 +1028,7 @@ let mid = allNumbers.length / 2
 let high = allNumbers.length
 let guessCounter = 1
 
-function guessUserNumber() {
+const guessUserNumber = () => {
 
     guessTextElem2.style.opacity = '0'
 
@@ -1041,40 +1041,7 @@ function guessUserNumber() {
     buttonsWrapper.addEventListener("click", stepTwo)
 }
 
-function AgainFunction() {
-    location.reload()
-}
-
-function stepThree(event) {
-
-    guessCounter++
-
-    if (event.target.innerHTML === "Lower") {
-
-        high = mid
-        mid = mid - ((high - low) / 2)
-
-    } else if (event.target.innerHTML === "Higher") {
-
-        low = mid
-        mid = mid + ((high - low) / 2)
-
-    }
-
-    guessTextElem.innerHTML = "is this your number? " + Math.floor(mid)
-
-    if (event.target.innerHTML === "Yes") {
-        guessTextElem.innerHTML = "i beat you with just " + guessCounter + " questions ;)"
-
-        yesBtn.style.display = 'none'
-        lowerBtn.style.display = 'none'
-        higherBtn.style.display = 'none'
-
-        againBtn.addEventListener('click', AgainFunction)
-    }
-}
-
-function stepTwo(event) {
+const stepTwo = event => {
 
     if (event.target.innerHTML === "Yes") {
 
@@ -1092,12 +1059,60 @@ function stepTwo(event) {
         guessTextElem.innerHTML = "so, is your number lower " + mid + " or higher?"
 
         noBtn.style.display = 'none'
+        yesBtn.style.display = 'none'
 
         lowerBtn.style.display = 'inline'
         higherBtn.style.display = 'inline'
 
         buttonsWrapper.addEventListener("click", stepThree)
     }
+}
+
+const stepThree = event => {
+
+    yesBtn.style.display = 'inline'
+
+    guessCounter++
+
+    if ((mid === (allNumbers.length - allNumbers.length + 2) && event.target.innerHTML === "Lower") || (mid === allNumbers.length - 1 && event.target.innerHTML === "Higher")) {
+
+        showResult()
+
+    } else {
+        if (event.target.innerHTML === "Lower") {
+
+            high = mid
+            mid = mid - Math.ceil(((high - low) / 2))
+
+        } else if (event.target.innerHTML === "Higher") {
+
+            low = mid
+            mid = mid + Math.ceil(((high - low) / 2))
+
+        }
+        guessTextElem.innerHTML = "is this your number? " + mid
+    }
+
+    if (event.target.innerHTML === "Yes") {
+        showResult()
+    }
+}
+
+const AgainFunction = () => {
+    location.reload()
+}
+
+const showResult = () => {
+
+    guessTextElem.innerHTML = "i beat you with just " + guessCounter + " questions ;)"
+
+    yesBtn.style.display = 'none'
+    lowerBtn.style.display = 'none'
+    higherBtn.style.display = 'none'
+
+    againBtn.style.display = 'inline'
+
+    againBtn.addEventListener('click', AgainFunction)
 }
 
 okBtn.addEventListener('click', guessUserNumber)
