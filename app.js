@@ -1047,7 +1047,7 @@ const stepTwo = event => {
 
     if (event.target.innerHTML === "Yes") {
 
-        guessTextElem.innerHTML = "i found your number with one question, your number is " + mid
+        guessTextElem.innerHTML = "i found your number with a question, your number is " + mid
 
         yesBtn.style.display = 'none'
         noBtn.style.display = 'none'
@@ -1059,7 +1059,7 @@ const stepTwo = event => {
     } else if (event.target.innerHTML === "No") {
 
         arrayChecker(shownNumbers)
-        guessTextElem.innerHTML = "so, is your number lower " + mid + " or higher?"
+        guessTextElem.innerHTML = "so, is your number lower than " + mid + " or higher?"
     }
 }
 
@@ -1071,7 +1071,7 @@ const arrayChecker = array => {
 
     array.push(newObject)
 
-    guessTextElem.innerHTML = "is your number lower " + mid + " or higher?"
+    guessTextElem.innerHTML = "is your number lower than " + mid + " or higher?"
 
     if (noBtn.style.display === 'inline' && yesBtn.style.display === 'inline') {
 
@@ -1082,7 +1082,7 @@ const arrayChecker = array => {
         higherBtn.style.display = 'inline'
 
     } else if (noBtn.style.display === 'none' && yesBtn.style.display === 'none') {
-        guessTextElem.innerHTML = "i beat you with just " + guessCounter + " questions, your number is " + mid + " "
+        guessTextElem.innerHTML = "i beat you with only " + guessCounter + " questions, your number is " + mid + " "
     }
 
     buttonsWrapper.addEventListener("click", stepThree)
@@ -1151,7 +1151,7 @@ const AgainFunction = () => {
 
 const showResult = () => {
 
-    guessTextElem.innerHTML = "i beat you with just " + guessCounter + " questions"
+    guessTextElem.innerHTML = "i beat you with only " + guessCounter + " questions"
 
     yesBtn.style.display = 'none'
     lowerBtn.style.display = 'none'
