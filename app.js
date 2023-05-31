@@ -1071,7 +1071,7 @@ const arrayChecker = array => {
 
     array.push(newObject)
 
-    guessTextElem.innerHTML = "is your number lower than " + mid + " or higher?"
+    guessTextElem.innerHTML = "is " + mid + " your number? If no, is your number lower than " + mid + " or higher?"
 
     if (noBtn.style.display === 'inline' && yesBtn.style.display === 'inline') {
 
