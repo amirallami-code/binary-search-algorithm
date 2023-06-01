@@ -1070,8 +1070,6 @@ let stepTwo = event => {
     }
 }
 
-
-
 let arrayChecker = array => {
 
     array.push(mid)
