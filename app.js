@@ -1015,7 +1015,7 @@ const lowerBtn = $.querySelector("#Lower")
 const higherBtn = $.querySelector("#Higher")
 const againBtn = $.querySelector("#Again")
 
-guessTextElem.innerHTML = "Guess a number between " + "1" + " and " + allNumbers.length + " (Keep this number to your head)"
+guessTextElem.innerHTML = "Guess a number between " + allNumbers[0] + " and " + allNumbers.length + " (Keep this number to your head)"
 
 guessTextElem2.innerHTML = "Click on \" OK \" Button to Continue "
 
@@ -1025,12 +1025,12 @@ lowerBtn.style.display = 'none'
 higherBtn.style.display = 'none'
 againBtn.style.display = 'none'
 
-let low = 1
+let low = allNumbers[0]
 let mid = allNumbers.length / 2
 let high = allNumbers.length
 let guessCounter = 1
 
-const guessUserNumber = () => {
+let guessUserNumber = () => {
 
     guessTextElem2.style.opacity = '0'
 
@@ -1043,71 +1043,71 @@ const guessUserNumber = () => {
     buttonsWrapper.addEventListener("click", stepTwo)
 }
 
-const stepTwo = event => {
+let stepTwo = event => {
 
     if (event.target.innerHTML === "Yes") {
 
-        guessTextElem.innerHTML = "i found your number with a question, your number is " + mid
+        guessTextElem.style.opacity = '0'
+        guessTextElem2.style.opacity = '1'
+        guessTextElem2.innerHTML = "i found your number with a guess, your number is " + mid
 
         yesBtn.style.display = 'none'
         noBtn.style.display = 'none'
 
-        againBtn.style.display = 'block'
+        againBtn.style.display = 'inline'
 
         againBtn.addEventListener('click', AgainFunction)
 
     } else if (event.target.innerHTML === "No") {
 
-        arrayChecker(shownNumbers)
-        guessTextElem.innerHTML = "so, is your number lower than " + mid + " or higher?"
-    }
-}
-
-const arrayChecker = array => {
-
-    let rejectedNumber = mid
-
-    let newObject = { number: rejectedNumber }
-
-    array.push(newObject)
-
-    guessTextElem.innerHTML = "is " + mid + " your number? If no, is your number lower than " + mid + " or higher?"
-
-    if (noBtn.style.display === 'inline' && yesBtn.style.display === 'inline') {
-
-        noBtn.style.display = 'none'
         yesBtn.style.display = 'none'
+        noBtn.style.display = 'none'
 
         lowerBtn.style.display = 'inline'
         higherBtn.style.display = 'inline'
 
-    } else if (noBtn.style.display === 'none' && yesBtn.style.display === 'none') {
-        guessTextElem.innerHTML = "i beat you with only " + guessCounter + " questions, your number is " + mid + " "
+        arrayChecker(shownNumbers)
     }
+}
+
+
+
+let arrayChecker = array => {
+
+    array.push(mid)
+
+    guessTextElem.innerHTML = "is " + mid + " your number? If no, is your number lower than " + mid + " or higher?"
 
     buttonsWrapper.addEventListener("click", stepThree)
 }
 
-const stepThree = event => {
+let stepThree = event => {
 
     yesBtn.style.display = 'inline'
 
     guessCounter++
 
-    if ((mid === (allNumbers[0] + 1) && event.target.innerHTML === "Lower") || (mid === allNumbers.length - 1 && event.target.innerHTML === "Higher")) {
+    if (mid === (allNumbers[0] + 1)) {
 
+        mid = allNumbers[0]
+        showResult()
+
+    } else if (mid === allNumbers.length - 1) {
+
+        mid = allNumbers.length
         showResult()
 
     } else {
+
         if (event.target.innerHTML === "Lower") {
 
             mid -= 2
 
             let numberFinder = shownNumbers.filter(function (rejectedNum) {
-                return rejectedNum.number === mid
+                return rejectedNum === mid
             })
 
-            if (numberFinder.length) {
+            if (numberFinder.length > 0) {
 
                 mid += 1
                 showResult()
@@ -1117,6 +1117,7 @@ const stepThree = event => {
                 mid += 2
                 high = mid
                 mid = mid - Math.ceil(((high - low) / 2))
+
             }
 
         } else if (event.target.innerHTML === "Higher") {
@@ -1124,10 +1125,10 @@ const stepThree = event => {
             mid += 2
 
             let numberFinder = shownNumbers.filter(function (rejectedNum) {
-                return rejectedNum.number === mid
+                return rejectedNum === mid
             })
 
-            if (numberFinder.length) {
+            if (numberFinder.length > 0) {
 
                 mid -= 1
                 showResult()
@@ -1141,17 +1142,20 @@ const stepThree = event => {
         } else if (event.target.innerHTML === "Yes") {
             showResult()
         }
+        arrayChecker(shownNumbers)
     }
-    arrayChecker(shownNumbers)
 }
 
-const AgainFunction = () => {
+let AgainFunction = () => {
     location.reload()
 }
 
-const showResult = () => {
+let showResult = () => {
 
-    guessTextElem.innerHTML = "i beat you with only " + guessCounter + " questions"
+    guessTextElem.style.opacity = '0'
+    guessTextElem2.style.opacity = '1'
+
+    guessTextElem2.innerHTML = "i beat you with only " + guessCounter + " questions, your number is " + mid
 
     yesBtn.style.display = 'none'
     lowerBtn.style.display = 'none'
