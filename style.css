@@ -38,12 +38,17 @@ body {
   font-size: 23px;
 }
 
-.text-guess2 {
+.text-guess2,
+.text-guess3 {
   transition: all 150ms;
   -webkit-transition: all 150ms;
   -moz-transition: all 150ms;
   -ms-transition: all 150ms;
   -o-transition: all 150ms;
+}
+
+.text-guess3 {
+  color: rgb(165, 100, 4);
 }
 
 .btns {

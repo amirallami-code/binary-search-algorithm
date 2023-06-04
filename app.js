@@ -1007,6 +1007,7 @@ let $ = document
 
 const guessTextElem = $.querySelector(".text-guess")
 const guessTextElem2 = $.querySelector(".text-guess2")
+const guessTextElem3 = $.querySelector(".text-guess3")
 const buttonsWrapper = $.querySelector(".buttons-div")
 const okBtn = $.querySelector("#OK")
 const yesBtn = $.querySelector("#Yes")
@@ -1017,7 +1018,9 @@ const againBtn = $.querySelector("#Again")
 
 guessTextElem.innerHTML = "Guess a number between " + allNumbers[0] + " and " + allNumbers.length + " (Keep this number to your head)"
 
-guessTextElem2.innerHTML = "Click on \" OK \" Button to Continue "
+guessTextElem3.innerHTML = ' Warning: If you answer even one of the questions incorrectly, the item number will not be found!'
+
+guessTextElem2.innerHTML = "Click on \" OK \" Button to Continue"
 
 yesBtn.style.display = 'none'
 noBtn.style.display = 'none'
@@ -1033,6 +1036,7 @@ let guessCounter = 1
 let guessUserNumber = () => {
 
     guessTextElem2.style.opacity = '0'
+    guessTextElem3.style.opacity = '0'
 
     okBtn.style.display = 'none'
     yesBtn.style.display = 'inline'
