@@ -1,7 +1,7 @@
 ## Binary Search Algorithm
 #### How does this algorithm help us?
 It helps us find numbers or letters, words or anything else as quickly as possible.
-This code is intended for searching numbers and can find them in the fastest way without taking a number from the user
+This code is intended for searching numbers and can find them in the fastest way without taking a number from user
 
 #### How does binary search work?
 Pretend you have a thick phone book. Each page has several entries of names, followed by the person's phone number next to it on the same line, and all the names are sorted by alphabetical order, so "Aaron" appears before "Andy". How would you go about searching for someone named "Steve"?
