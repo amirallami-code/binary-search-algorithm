@@ -1,15 +1,12 @@
 let allNumbers = []
+let shownNumbers = []
 
 for (let i = 1; i <= 1000; i++) {
     allNumbers.push(i);
 }
 
-console.log(allNumbers)
-
-let shownNumbers = []
 
 let $ = document
-
 const guessTextElem = $.querySelector(".text-guess")
 const guessTextElem2 = $.querySelector(".text-guess2")
 const guessTextElem3 = $.querySelector(".text-guess3")
