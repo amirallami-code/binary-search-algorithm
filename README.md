@@ -26,7 +26,8 @@ We welcome contributions from the community. If you wish to contribute:
 - Commit your changes (`git commit -m 'Add some AmazingFeature`').
 - Push to your branch (`git push origin feature/AmazingFeature`).
 - Open a pull request.
-License
+- 
+## License
 This project does not have any license.
 
 ## Contact Information
