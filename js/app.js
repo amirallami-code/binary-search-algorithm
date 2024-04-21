@@ -3,6 +3,7 @@ const guessTextElem = $.querySelector(".text-guess")
 const guessTextElem2 = $.querySelector(".text-guess2")
 const guessTextElem3 = $.querySelector(".text-guess3")
 const buttonsWrapper = $.querySelector(".buttons-div")
+const headerText = $.querySelector(".header-text")
 const okBtn = $.querySelector("#OK")
 const yesBtn = $.querySelector("#Yes")
 const noBtn = $.querySelector("#No")
@@ -13,10 +14,12 @@ const againBtn = $.querySelector("#Again")
 let allNumbers = []
 let shownNumbers = []
 
-for (let i = 1; i <= 1000; i++) {
+let allNumbersLength = 1000
+
+for (let i = 1; i <= allNumbersLength; i++) {
     allNumbers.push(i);
 }
-
+headerText.innerHTML = `I will find your picked number, between ${allNumbersLength} numbers in the lowest guesses`
 guessTextElem.innerHTML = "pick a number between " + allNumbers[0] + " and " + allNumbers.length + " (Keep this number to your head)"
 guessTextElem2.innerHTML = "and Click on \" OK \" Button to Continue"
 guessTextElem3.innerHTML = `<span class="Bold">Warning:</span> If you answer even one of the questions <br> incorrectly, the number will not be found.`
@@ -42,7 +45,6 @@ let guessUserNumber = () => {
     buttonsWrapper.addEventListener("click", stepTwo)
 }
 let stepTwo = event => {
-    console.log(mid);
     if (event.target.innerHTML === "Yes") {
         guessTextElem.style.opacity = '0'
         guessTextElem2.style.opacity = '1'
@@ -61,6 +63,7 @@ let stepTwo = event => {
 }
 let arrayChecker = (array, mid) => {
     array.push(mid)
+    yesBtn.innerHTML = "Yes, it's my number"
     if (mid == allNumbers.length / 2) {
         guessTextElem.innerHTML = `is your number lower than <span class="Bold">${mid}</span> or higher?`
     } else {
