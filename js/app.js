@@ -1,11 +1,3 @@
-let allNumbers = []
-let shownNumbers = []
-
-for (let i = 1; i <= 1000; i++) {
-    allNumbers.push(i);
-}
-
-
 let $ = document
 const guessTextElem = $.querySelector(".text-guess")
 const guessTextElem2 = $.querySelector(".text-guess2")
@@ -18,9 +10,16 @@ const lowerBtn = $.querySelector("#Lower")
 const higherBtn = $.querySelector("#Higher")
 const againBtn = $.querySelector("#Again")
 
-guessTextElem.innerHTML = "Guess a number between " + allNumbers[0] + " and " + allNumbers.length + " (Keep this number to your head)"
+let allNumbers = []
+let shownNumbers = []
+
+for (let i = 1; i <= 1000; i++) {
+    allNumbers.push(i);
+}
+
+guessTextElem.innerHTML = "pick a number between " + allNumbers[0] + " and " + allNumbers.length + " (Keep this number to your head)"
 guessTextElem2.innerHTML = "and Click on \" OK \" Button to Continue"
-guessTextElem3.innerHTML = ' Warning: If you answer even one of the questions incorrectly, the item number will not be found!'
+guessTextElem3.innerHTML = `<span class="Bold">Warning:</span> If you answer even one of the questions <br> incorrectly, the number will not be found.`
 
 yesBtn.style.display = 'none'
 noBtn.style.display = 'none'
@@ -43,6 +42,7 @@ let guessUserNumber = () => {
     buttonsWrapper.addEventListener("click", stepTwo)
 }
 let stepTwo = event => {
+    console.log(mid);
     if (event.target.innerHTML === "Yes") {
         guessTextElem.style.opacity = '0'
         guessTextElem2.style.opacity = '1'
@@ -56,12 +56,16 @@ let stepTwo = event => {
         noBtn.style.display = 'none'
         lowerBtn.style.display = 'inline'
         higherBtn.style.display = 'inline'
-        arrayChecker(shownNumbers)
+        arrayChecker(shownNumbers, mid)
     }
 }
-let arrayChecker = array => {
+let arrayChecker = (array, mid) => {
     array.push(mid)
-    guessTextElem.innerHTML = "is " + mid + " your number? If no, is your number lower than " + mid + " or higher?"
+    if (mid == allNumbers.length / 2) {
+        guessTextElem.innerHTML = `is your number lower than <span class="Bold">${mid}</span> or higher?`
+    } else {
+        guessTextElem.innerHTML = `is <span class="Bold">${mid}</span> your number? If no, is your number lower than <span class="Bold">${mid}</span> or higher?`
+    }
     buttonsWrapper.addEventListener("click", stepThree)
 }
 let stepThree = event => {
@@ -103,11 +107,8 @@ let stepThree = event => {
         } else if (event.target.innerHTML === "Yes") {
             showResult()
         }
-        arrayChecker(shownNumbers)
+        arrayChecker(shownNumbers, mid)
     }
-}
-let AgainFunction = () => {
-    location.reload()
 }
 let showResult = () => {
     guessTextElem.style.opacity = '0'
@@ -118,5 +119,8 @@ let showResult = () => {
     higherBtn.style.display = 'none'
     againBtn.style.display = 'inline'
     againBtn.addEventListener('click', AgainFunction)
+}
+let AgainFunction = () => {
+    location.reload()
 }
 okBtn.addEventListener('click', guessUserNumber)

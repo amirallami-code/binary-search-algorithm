@@ -1,3 +1,12 @@
+@import url("style/fonts.css");
+
+:root {
+  --primary-color: #333ac1;
+  --warning-color: #dc2626;
+
+  --font-family: "myriad";
+}
+
 *,
 *:before,
 *:after {
@@ -7,9 +16,18 @@
 }
 body {
   height: 100vh;
-  background: linear-gradient(135deg, #61d954, #2ebf75);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #e5e5f7;
+  background-image: radial-gradient(#444df746 1px, #e5e5f7 1px);
+  background-size: 20px 20px;
+  font-family: var(--font-family);
+  color: var(--primary-color);
+}
+/* helper class */
+.Bold {
+  font-weight: 900;
 }
 
 .div {
@@ -21,10 +39,15 @@ body {
   padding: 50px 15px;
   gap: 50px;
 }
+.titles-holder {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
 .header-h2 {
   font-size: 25px;
-  font-weight: 800;
+  font-weight: 900;
   text-align: center;
 }
 
@@ -33,6 +56,9 @@ body {
 }
 
 .guesses {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
   text-align: center;
   font-weight: 400;
   font-size: 23px;
@@ -41,37 +67,40 @@ body {
 .text-guess2,
 .text-guess3 {
   transition: all 150ms;
-  -webkit-transition: all 150ms;
-  -moz-transition: all 150ms;
-  -ms-transition: all 150ms;
-  -o-transition: all 150ms;
 }
-
 .text-guess3 {
-  color: rgb(191, 144, 2);
+  color: var(--warning-color);
 }
-
+.buttons-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .btns {
   cursor: pointer;
   width: 250px;
   height: auto;
   padding: 15px 25px;
-  background-color: rgb(0, 108, 0);
+  margin: 10px;
+  background-color: var(--primary-color);
   color: white;
   font-weight: 500;
   border: none;
   transition: all 150ms;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
-  -webkit-transition: all 150ms;
-  -moz-transition: all 150ms;
-  -ms-transition: all 150ms;
-  -o-transition: all 150ms;
+  font-size: 20px;
+  font-family: var(--font-family);
 }
 
 .btns:hover {
-  background-color: rgb(0, 72, 0);
+  background-color: var(--primary-color);
+}
+
+@media screen and (max-width: 762px) {
+  .guesses {
+    text-align: left;
+    font-size: 20px;
+  }
 }
