@@ -11,6 +11,13 @@ You’ll start by flipping the book to the middle and see what the first alphabe
 
 That, in essence, is the binary search algorithm. You halve a list, discard one half and continue searching through the remaining half, until you arrive (or not) at the value you’re searching for. Voila! You found what you wanted without iterating from the first item through to the last in the list - spending much less time for the same result.
 
+
+## Preview
+go to this link and see the preview of this project online
+
+https://binary-search-algorithm.vercel.app
+
+
 ## Installation & Usage
 Clone this repository to your local machine using
 ```bash
