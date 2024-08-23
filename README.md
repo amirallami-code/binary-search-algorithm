@@ -76,7 +76,7 @@ This project is currently not under any license. For more information, see the [
 ## Contact
 
 For questions or concerns, please contact:
-Amir Allami - [amirallami.dev@gmail.com](mailto:amirallami.dev@gmail.com)
+Amirhossein Allami - [amirallami.dev@gmail.com](mailto:amirallami.dev@gmail.com)
 
 Project Link: [https://github.com/amirallami-code/binary-search-algorithm](https://github.com/amirallami-code/binary-search-algorithm)
 
