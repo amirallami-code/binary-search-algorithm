@@ -1,10 +1,6 @@
-@import url("style/fonts.css");
-
 :root {
-  --primary-color: #333ac1;
-  --warning-color: #dc2626;
-
-  --font-family: "myriad";
+  --primary-color: #fff;
+  --warning-color: #be185d;
 }
 
 *,
@@ -19,10 +15,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #e5e5f7;
-  background-image: radial-gradient(#444df746 1px, #e5e5f7 1px);
+  background-color: #0b1121;
   background-size: 20px 20px;
-  font-family: var(--font-family);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--primary-color);
 }
 /* helper class */
@@ -42,6 +37,7 @@ body {
 .titles-holder {
   display: flex;
   flex-direction: column;
+  text-align: center;
   gap: 10px;
 }
 
@@ -61,12 +57,12 @@ body {
   gap: 20px;
   text-align: center;
   font-weight: 400;
-  font-size: 23px;
+  font-size: 21px;
 }
 
 .text-guess2,
 .text-guess3 {
-  transition: all 150ms;
+  transition: all 150ms ease-in-out;
 }
 .text-guess3 {
   color: var(--warning-color);
@@ -77,30 +73,33 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-wrap: wrap;
+}
+#Yes,
+#No,
+#Lower,
+#Higher,
+#Again {
+  display: none;
 }
 .btns {
   cursor: pointer;
-  width: 250px;
+  width: 280px;
+  min-width: max-content;
   height: auto;
   padding: 15px 25px;
   margin: 10px;
   background-color: var(--primary-color);
-  color: white;
+  color: #0f172a;
   font-weight: 500;
   border: none;
   transition: all 150ms;
   border-radius: 5px;
   font-size: 20px;
-  font-family: var(--font-family);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
 }
 
 .btns:hover {
   background-color: var(--primary-color);
-}
-
-@media screen and (max-width: 762px) {
-  .guesses {
-    text-align: left;
-    font-size: 20px;
-  }
 }
