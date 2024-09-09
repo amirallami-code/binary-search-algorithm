@@ -1,118 +1,98 @@
 :root {
   --primary-color: #fff;
   --warning-color: #be185d;
-  --background-color: #0b1121;
-  --text-color: #0f172a;
-  --font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-/* Reset */
 *,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
+*:before,
+:after {
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-
-/* Base styles */
 body {
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
-  background-color: var(--background-color);
+  background-color: #0b1121;
   background-size: 20px 20px;
-  font-family: var(--font-family);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--primary-color);
-  line-height: 1.5;
 }
-
-/* Layout */
-.container {
+/ helper class */
+.Bold {
+  font-weight: 900;
+}
+.div {
   width: 100%;
-  max-width: 800px;
-  padding: 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 2rem;
+  justify-content: center;
+  padding: 50px 15px;
+  gap: 50px;
 }
-
-/* Typography */
-h1, .header-text {
+.titles-holder {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 10px;
+}
+.header-h2 {
+  font-size: 25px;
+  font-weight: 900;
   text-align: center;
 }
-
-h1 {
-  font-size: 1.5rem;
-  font-weight: 900;
-}
-
 .header-text {
-  font-size: 1.25rem;
+  font-size: 20px;
 }
-
 .guesses {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 20px;
   text-align: center;
-  font-size: 1.3rem;
+  font-weight: 400;
+  font-size: 21px;
 }
-
-strong {
-  font-weight: 900;
+.text-guess2,
+.text-guess3 {
+  transition: all 150ms ease-in-out;
 }
-
-/* Game area */
-.game-area {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2rem;
-}
-
-/* Buttons */
-.buttons-div {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.btn {
-  cursor: pointer;
-  min-width: 280px;
-  padding: 0.75rem 1.25rem;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  font-weight: bold;
-  font-size: 1.25rem;
-  font-family: inherit;
-  border: none;
-  border-radius: 5px;
-  transition: background-color 150ms ease-in-out, transform 150ms ease-in-out;
-}
-
-.btn:hover, .btn:focus {
-  background-color: var(--primary-color);
-  transform: translateY(-2px);
-}
-
-/* Utility classes */
-.text-warning {
+.text-guess3 {
   color: var(--warning-color);
 }
-
-.hidden {
+.buttons-div {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+#Yes,
+#No,
+#Lower,
+#Higher,
+#Again {
   display: none;
 }
-
-/* Responsive adjustments */
-@media (max-width: 600px) {
-  .btn {
-    min-width: 100%;
-  }
+.btns {
+  cursor: pointer;
+  width: 280px;
+  min-width: max-content;
+  height: auto;
+  padding: 15px 25px;
+  margin: 10px;
+  background-color: var(--primary-color);
+  color: #0f172a;
+  font-weight: 500;
+  border: none;
+  transition: all 150ms;
+  border-radius: 5px;
+  font-size: 20px;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: bold;
+}
+.btns:hover {
+  background-color: var(--primary-color);
 }
