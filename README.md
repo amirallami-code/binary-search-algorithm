@@ -8,8 +8,6 @@
 ![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen)
 ![Contributions Welcome](https://img.shields.io/badge/Contributions-welcome-brightgreen)
 
-
-
 An efficient implementation of the binary search algorithm, optimized for rapid number searching.
 
 ## Table of Contents
@@ -47,6 +45,11 @@ Binary search operates on the principle of divide and conquer:
 6. Continue this process until the target is found or the search space is exhausted.
 
 This approach significantly reduces search time, especially in extensive datasets.
+
+![Binary Search Algorithm](assets/binary-search-algorithm.gif)
+[Video Reference](https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A)
+
+
 
 ## Demo
 
