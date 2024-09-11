@@ -28,10 +28,10 @@ This repository houses a robust implementation of the binary search algorithm. B
 
 ## Features
 
-- ⚡ Lightning-fast search algorithm
-- 🔢 Optimized for numerical searches
-- 🔍 No manual input required for search targets
-- 📊 Ideal for large datasets
+- Lightning-fast search algorithm
+- Optimized for numerical searches
+- No manual input required for search targets
+- Ideal for large datasets
 
 ## How It Works
 
@@ -46,9 +46,13 @@ Binary search operates on the principle of divide and conquer:
 
 This approach significantly reduces search time, especially in extensive datasets.
 
-![Binary Search Algorithm](assets/binary-search-algorithm.gif)
-[Video Reference](https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A)
+<p align="center">
+  <img width="750" height="auto" src="assets/binary-search-algorithm.gif">
+</p>
 
+<div align="center">
+      <a href="https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A">Video Reference</a>
+</div>
 
 
 ## Demo
