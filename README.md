@@ -51,7 +51,7 @@ This approach significantly reduces search time, especially in extensive dataset
 </p>
 
 <div align="center">
-      <a href="https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A">Video Reference</a>
+      <a href="https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A">Video Source</a>
 </div>
 
 
