@@ -19,11 +19,11 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   color: var(--primary-color);
 }
-/ helper class */
+/* helper classes */
 .Bold {
   font-weight: 900;
 }
-.div {
+.container {
   width: 100%;
   display: flex;
   flex-direction: column;
