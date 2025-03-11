@@ -46,14 +46,19 @@ Binary search operates on the principle of divide and conquer:
 
 This approach significantly reduces search time, especially in extensive datasets.
 
+Here's a few examples of how this algorithm actually works
+
+<p align="center">
+  <img width="750" height="auto" src="assets/binary-search-algorithm2.gif">
+</p>
+
 <p align="center">
   <img width="750" height="auto" src="assets/binary-search-algorithm.gif">
 </p>
 
 <div align="center">
-      <a href="https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A">Video Source</a>
+  <a href="https://youtu.be/DRsJ8sA9xzc?si=JPRl0YHB3JSCaS_A">Gif ref</a>
 </div>
-
 
 ## Demo
 
