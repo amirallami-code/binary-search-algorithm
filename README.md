@@ -102,4 +102,4 @@ Project Link: [https://github.com/amirallami-code/binary-search-algorithm](https
 
 ---
 
-If you find it helpful, consider starring the repository.
+⭐ Star this repository if you find it helpful.
